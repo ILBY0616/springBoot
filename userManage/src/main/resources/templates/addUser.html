@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="zh-CN" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>添加用户</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+<div class="container mt-5">
+    <h2 class="text-center">添加用户</h2>
+    <form th:action="@{/addUser}" method="post">
+        <div class="form-group">
+            <label for="uid">UID:</label>
+            <input type="text" name="uid" class="form-control" id="uid" placeholder="请输入用户的UID">
+        </div>
+        <div class="form-group">
+            <label for="name">姓名:</label>
+            <input type="text" name="name" class="form-control" id="name" placeholder="请输入用户的姓名">
+        </div>
+        <div class="form-group">
+            <label for="password">密码:</label>
+            <input type="text" name="password" class="form-control" id="password" placeholder="请输入用户的密码">
+        </div>
+        <div class="form-group">
+            <label for="role">角色:</label>
+            <input type="text" name="role" class="form-control" id="role" placeholder="请输入用户的角色">
+        </div>
+        <div class="form-group">
+            <label for="status">状态:</label>
+            <input type="text" name="status" class="form-control" id="status" placeholder="请输入用户的状态">
+        </div>
+        <button type="submit" class="btn btn-primary btn-block">点击添加</button>
+    </form>
+</div>
+</body>
+</html>

@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>海绵宝宝-与我交流</title>
+    <link rel="stylesheet" href="/css/allBase.css">
+    <link rel="stylesheet" href="/css/contactWithMe.css">
+</head>
+<body>
+    <div class="navDiv">
+        <img src="/resource/image/groupPhoto01.jpg" alt="groupPhoto01">
+        <img src="/resource/image/logo.png" alt="logo">
+    </div>
+    <header class="navHeader">
+        <ul>
+            <li>
+                <a th:href="@{'/homePage'}">首页</a>
+            </li>
+            <li class="tabLi">
+                <a th:href="@{'/roleIntroduction'}">角色介绍 &#x25bc;</a>
+                <ul class="tabUl">
+                    <li><a href="#">海绵宝宝</a></li>
+                    <li><a href="#">派大星</a></li>
+                    <li><a href="#">章鱼哥</a></li>
+                    <li><a href="#">蟹老板</a></li>
+                </ul>
+            </li>
+            <li>
+                <a th:href="@{'/representativeWork'}">代表作品</a>
+            </li>
+            <li>
+                <a th:href="@{'/contactWithMe'}" style="background-color: rgb(110, 139, 45);">与我交流</a>
+            </li>
+            <li>
+                <a th:if="${session.user != null}" th:href="@{'/userCenter'}">用户中心</a>
+                <a th:unless="${session.user != null}" th:href="@{'/loginRegister'}">登录注册</a>
+            </li>
+        </ul>
+    </header>
+
+    <div class="contactDiv">
+        <h2>与我联系</h2>
+        <form id="contactForm">
+            <label for="name">姓名</label>
+            <input type="text" id="name" name="name" placeholder="请输入您的姓名" required>
+            <label for="email">邮箱</label>
+            <input type="email" id="email" name="email" placeholder="请输入您的邮箱" required>
+            <label for="message">留言</label>
+            <textarea id="message" name="message" placeholder="请输入您的留言" required></textarea>
+            <button type="submit">提交</button>
+        </form>
+    </div>
+
+    <div class="commentDiv">
+        <h2>网站评论</h2>
+        <main>
+            <section id="formSection">
+                <h2>添加评论</h2>
+                <form id="commentForm">
+                    <div class="formGroup">
+                        <label for="username">姓名：</label>
+                        <input type="text" id="username" required>
+                    </div>
+                    <div class="formGroup">
+                        <label for="comment">评论：</label>
+                        <textarea id="comment" required></textarea>
+                    </div>
+                    <div class="formGroup">
+                        <button type="submit">提交评论</button>
+                    </div>
+                </form>
+            </section>
+            <section id="listSection">
+                <h2>评论列表</h2>
+                <div id="commentList"></div>
+            </section>
+        </main>
+    </div>
+
+    <button id="topButton" onclick="toTop()">▲</button>
+
+    <footer>
+        &copy;软工21101班雷冰玉&nbsp;邱鹏
+    </footer>
+</body>
+<script src="/js/allBase.js"></script>
+<script src="/js/contactWithMe.js"></script>
+</html>

@@ -1,0 +1,153 @@
+.divider {
+    margin: 0 auto;
+    width: 1200px;
+    height: 50px;
+    border-bottom: 1px dotted #000;
+    overflow: hidden;
+}
+
+.divider > span {
+    display: block;
+    float: left;
+    width: 24px;
+    height: 24px;
+    margin: 13px;
+    background-color: rgb(152 191 61);
+    border-radius: 20px;
+}
+
+.divider > h2 {
+    display: block;
+    float: left;
+    font-size: 25px;
+    line-height: 50px;
+}
+
+.detailDiv01 {
+    margin: 0 auto;
+    width: 1200px;
+    height: 400px;
+    overflow: hidden;
+}
+
+.left {
+    float: left;
+    width: 300px;
+    height: 300px;
+    margin: 50px;
+}
+
+.left > img {
+    width: 300px;
+    height: 300px;
+    transition: transform 0.5s ease-in-out;
+}
+
+.left img:hover {
+    transform: rotateY(180deg);
+}
+
+.right {
+    float: left;
+    width: 600px;
+    height: 300px;
+    margin: 50px;
+}
+
+.right > p {
+    font-size: 18px;
+    margin-bottom: 18px;
+}
+
+.right > p:nth-child(7) {
+    font-size: 14px;
+    color: #666;
+    text-indent: 2em;
+}
+
+.detailDiv02 {
+    margin: 0 auto;
+    width: 1200px;
+    height: 600px;
+}
+
+.top {
+    width: 1200px;
+    height: 100px;
+    text-indent: 2em;
+    font-size: 16px;
+    line-height: 50px;
+}
+
+.bottom {
+    width: 800px;
+    height: 500px;
+    margin: 0 200px;
+}
+
+.detailDiv03 {
+    margin: 0 auto;
+    width: 1200px;
+    height: 600px;
+}
+
+section {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    padding: 80px 40px 40px 80px;
+}
+
+.card {
+    width: min(100%, 500px);
+    background: rgba(255, 255, 255);
+    transition: transform 0.6s ease-in-out;
+    border-radius: 16px;
+    font-family: "Poppins", sans-serif;
+    z-index: 5;
+}
+
+.card > img {
+    display: block;
+    width: 100%;
+    max-width: 500px;
+    aspect-ratio: 4/3;
+    object-fit: cover;
+    object-position: 50% 50%;
+    border-radius: 16px 16px 0 0;
+    filter: contrast(70%);
+    transition: all 0.6s cubic-bezier(0.43, 0.41, 0.22, 0.91);
+}
+
+.card > img:hover {
+    filter: contrast(100%);
+}
+
+.content {
+    display: flex;
+    flex-direction: column;
+    padding: 20px 15px 20px;
+}
+
+.content > p {
+    margin-bottom: 10px;
+}
+
+.content > p:nth-child(1) {
+    font-size: 1rem;
+    font-weight: 600;
+    margin-bottom: 10px;
+    color: #1e40af;
+}
+
+.content > p:nth-child(2) {
+    font-size: 0.8rem;
+    font-weight: 400;
+    color: #6b7280;
+}
+
+h1 {
+    margin: 25px auto;
+    color: rgb(152 191 61);
+    text-align: center;
+}

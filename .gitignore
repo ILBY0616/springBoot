@@ -1,0 +1,4 @@
+# Project exclude paths
+/fileManage/target/
+/spongeBob/target/
+/userManage/target/

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="zh-CN" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>用户列表</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+<div class="container">
+    <h2 class="text-center">用户列表</h2>
+    <table class="table table-striped">
+        <thead class="thead-dark">
+        <tr>
+            <th scope="col">UID</th>
+            <th scope="col">名字</th>
+            <th scope="col">密码</th>
+            <th scope="col">角色</th>
+            <th scope="col">状态</th>
+            <th scope="col">操作</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="user:${allUser}">
+            <td th:text="${user.getUid()}"></td>
+            <td th:text="${user.getName()}"></td>
+            <td th:text="${user.getPassword()}"></td>
+            <td th:text="${user.getRole()}"></td>
+            <td th:text="${user.getStatus()}"></td>
+            <td>
+                <a class="btn btn-primary" role="button" th:href="@{'/toUpdateUser/' + ${user.getUid()}}">修改</a>
+                <a class="btn btn-danger" role="button" th:href="@{'/deleteUser/' + ${user.getUid()}}">删除</a>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+    <!-- 添加员工按钮 -->
+    <div class="text-center">
+        <a class="btn btn-success" role="button" th:href="@{/toAddUser}">添加用户</a>
+    </div>
+</div>
+</body>
+</html>

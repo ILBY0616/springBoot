@@ -1,0 +1,10 @@
+# SpringBoot
+spring:
+  thymeleaf:
+    cache: false  # 禁用Thymeleaf模板引擎的缓存
+    prefix: classpath:/templates/  # 模板文件的前缀路径，指向项目资源路径下的spongeBob/template/html目录
+    suffix: .html  # 模板文件的后缀，设置为.html
+
+# Socket
+server:
+  port: 8080  # 服务器端口号，默认为8080

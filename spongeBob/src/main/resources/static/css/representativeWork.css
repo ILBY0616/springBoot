@@ -1,0 +1,38 @@
+.main {
+    width: 1200px;
+    height: auto;
+    margin: 0 auto;
+}
+
+.title {
+    margin: 25px auto;
+    width: 200px;
+    height: 50px;
+    background-color: rgb(152 191 61);
+    border-radius: 10px;
+}
+
+.title > h2 {
+    color: #fff;
+    text-align: center;
+    line-height: 50px;
+    font-weight: normal;
+    font-size: 24px;
+}
+
+.work {
+    margin: 50px 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.work img {
+    width: 250px;
+    height: 385px;
+    transition: transform 0.3s ease;
+}
+
+.work img:hover {
+    transform: scale(1.1);
+}

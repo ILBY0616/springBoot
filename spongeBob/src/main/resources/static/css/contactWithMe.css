@@ -1,0 +1,150 @@
+.contactDiv {
+    margin: 0 auto;
+    width: 1200px;
+    height: 500px;
+    background: rgb(242, 242, 242);
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.contactDiv > h2 {
+    margin: 10px auto;
+    width: 1160px;
+    height: 60px;
+    font-size: 24px;
+    text-align: center;
+    line-height: 60px;
+    color: rgb(0, 0, 0);
+}
+
+.contactDiv > form {
+    margin: 0 auto;
+    width: 1160px;
+    height: 340px;
+}
+
+#contactForm > label,
+#contactForm > input,
+#contactForm > textarea,
+#contactForm > button {
+    display: block;
+    width: 1160px;
+    margin-bottom: 15px;
+}
+
+#contactForm > label {
+    height: 20px;
+    font-weight: bold;
+    color: #555555;
+}
+
+#contactForm > input {
+    height: 40px;
+    border-radius: 3px;
+    border: 1px solid rgb(110, 139, 45);
+}
+
+#contactForm > textarea {
+    padding: 10px;
+    border: 1px solid rgb(110, 139, 45);
+    height: 100px;
+    border-radius: 3px;
+}
+
+#contactForm > button {
+    margin-top: 30px;
+    background-color: rgb(152 191 61);
+    color: white;
+    border: none;
+    padding: 10px;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+#contactForm > button:hover {
+    background-color: rgb(110, 139, 45);
+}
+
+.commentDiv {
+    margin: 0 auto;
+    width: 1200px;
+    height: 550px;
+    background: rgb(242, 242, 242);
+    overflow: hidden;
+}
+
+.commentDiv > h2 {
+    margin: 0 auto 10px;
+    width: 1200px;
+    height: 50px;
+    background-color: rgb(152 191 61);
+    color: rgb(0, 0, 0);
+    font-size: 24px;
+    text-align: center;
+    line-height: 50px;
+}
+
+.commentDiv > main {
+    margin: auto auto;
+    width: 1160px;
+    height: 470px;
+}
+
+main > section {
+    display: block;
+    margin: 0 auto 50px;
+    width: 1160px;
+    height: 300px;
+}
+
+main > section > h2 {
+    margin: 0 auto 10px;
+    width: 1160px;
+    height: 36px;
+    color: rgb(0, 0, 0);
+    font-size: 24px;
+    font-weight: bold;
+    line-height: 36px;
+}
+
+#commentForm label,
+#commentForm input,
+#commentForm textarea,
+#commentForm button {
+    display: block;
+    width: 1160px;
+    margin-bottom: 15px;
+}
+
+#commentForm label {
+    height: 20px;
+    font-weight: bold;
+    color: #555555;
+}
+
+#commentForm input {
+    height: 40px;
+    border-radius: 3px;
+    border: 1px solid rgb(110, 139, 45);
+}
+
+#commentForm textarea {
+    padding: 10px;
+    border: 1px solid rgb(110, 139, 45);
+    height: 100px;
+    border-radius: 3px;
+}
+
+#commentForm button {
+    margin: 30px 0;
+    background-color: rgb(152 191 61);
+    color: white;
+    border: none;
+    padding: 10px;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+#commentForm button:hover {
+    background-color: rgb(110, 139, 45);
+}
