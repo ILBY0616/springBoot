@@ -8,7 +8,10 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.multipart.MultipartFile;
 
+import javax.imageio.ImageIO;
 import javax.servlet.http.HttpServletResponse;
+import java.awt.*;
+import java.awt.image.BufferedImage;
 import java.io.*;
 import java.net.InetAddress;
 import java.net.UnknownHostException;
@@ -18,7 +21,7 @@ import java.util.List;
 public class FileController {
 
     public String info() {
-        InetAddress inetAddress = null;
+        InetAddress inetAddress;
         try {
             inetAddress = InetAddress.getLocalHost();
             return "主机地址：" + inetAddress.getHostAddress() + " 主机名称：" + inetAddress.getHostName();
@@ -41,10 +44,11 @@ public class FileController {
 
     @RequestMapping("/uploadFile")
     public @ResponseBody String uploadFile(@RequestParam("fileName") List<MultipartFile> files) {
-        String message = "";
+        String message = "提示信息：";
         if (files.isEmpty()) {
-            message = "没有上传的任务";
-        }else {
+            String tip = "没有上传的任务";
+            message = String.format("%s%n%s", message, tip);
+        } else {
             String path = "D:\\IDEA\\WorkPlace\\springBoot\\fileManage\\src\\main\\resources\\static\\image\\upload";
             int i = 0;
             for (MultipartFile file : files) {
@@ -53,21 +57,24 @@ public class FileController {
                 int size = (int) file.getSize();
                 System.out.println(fileName + size);
                 if (file.isEmpty() || fileName == null) {
-                    String tip = "第" + i + "个文件上传为空\n";
-                    message = String.format("%s%s", message, tip);
+                    String tip = "第" + i + "个文件上传为空";
+                    message = String.format("%s%n%s", message, tip);
                 } else {
                     File dest = new File(path, fileName);
                     if (!dest.getParentFile().exists()) {
-                        dest.getParentFile().mkdirs();
+                        boolean flag = dest.getParentFile().mkdirs();
+                        if (!flag) {
+                            System.out.println("目录创建失败");
+                        }
                     }
                     try {
                         file.transferTo(dest);
-                        String tip = "第" + i + "个文件上传成功\n";
-                        message = String.format("%s%s", message, tip);
+                        String tip = "第" + i + "个文件上传成功";
+                        message = String.format("%s%n%s", message, tip);
                     } catch (Exception e) {
                         System.out.println("Exception: " + e.getMessage());
-                        String tip = "第" + i + "个文件上传失败\n";
-                        message = String.format("%s%s", message, tip);
+                        String tip = "第" + i + "个文件上传失败";
+                        message = String.format("%s%n%s", message, tip);
                     }
                 }
             }
@@ -82,7 +89,7 @@ public class FileController {
     }
 
     @RequestMapping("/downloadFile")
-    public void downloadFile(HttpServletResponse response,@RequestParam("fileName") String fileName) {
+    public void downloadFile(HttpServletResponse response, @RequestParam("fileName") String fileName) {
         String path = "D:\\IDEA\\WorkPlace\\springBoot\\fileManage\\src\\main\\resources\\static\\image\\download";
         File file = new File(path, fileName);
         if (file.exists()) {
@@ -91,7 +98,7 @@ public class FileController {
             byte[] buffer = new byte[1024];
             FileInputStream fis = null;
             BufferedInputStream bis = null;
-            OutputStream os = null;
+            OutputStream os;
             try {
                 os = response.getOutputStream();
                 fis = new FileInputStream(file);
@@ -101,38 +108,56 @@ public class FileController {
                     os.write(buffer);
                     i = bis.read(buffer);
                 }
-            }catch (Exception e) {
+            } catch (Exception e) {
                 System.out.println("Error: " + e.getMessage());
                 System.out.println("file download" + fileName);
-                try{
+                try {
                     if (bis != null) {
                         bis.close();
                     }
                     if (fis != null) {
                         fis.close();
                     }
-                }catch (IOException i){
+                } catch (IOException i) {
                     System.out.println("Error: " + i.getMessage());
                 }
             }
         }
     }
 
-    @RequestMapping("/qrcode")
-    public String qrcode(Model model) {
+    @RequestMapping("/generate")
+    public String generate(Model model) {
         model.addAttribute("message", info());
-        return "/qrcode";
+        return "generate";
     }
 
-    @RequestMapping("newQrcode")
-    public void newQRCode(HttpServletResponse response) {
+    @RequestMapping("generateQRCode")
+    public void generateQRCode(HttpServletResponse response,
+                               @RequestParam int width,
+                               @RequestParam int height,
+                               @RequestParam int margin,
+                               @RequestParam String level,
+                               @RequestParam String format,
+                               @RequestParam String content,
+                               @RequestParam String foregroundColor,
+                               @RequestParam String backgroundColor,
+                               @RequestParam(required = false) MultipartFile frontImage) {
         try {
-            QRCode.createQRCode(response,200,200,10,"L","jpg","https://www.huas.edu.cn/");
+            // 读取前景色和背景色
+            Color fgColor = Color.decode(foregroundColor);
+            Color bgColor = Color.decode(backgroundColor);
+
+            // 读取嵌入的图像
+            BufferedImage backImage = null;
+            if (frontImage != null && !frontImage.isEmpty()) {
+                backImage = ImageIO.read(frontImage.getInputStream());
+            }
+
+            // 生成二维码并输出到响应流
+            QRCode.generateQRCode(response, width, height, margin, level, format, content, fgColor, bgColor, backImage);
         } catch (IOException e) {
-            throw new RuntimeException(e);
+            System.out.println("Error: " + e.getMessage());
         }
     }
-
-
 
 }

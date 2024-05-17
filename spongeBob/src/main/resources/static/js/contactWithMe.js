@@ -61,7 +61,7 @@ commentForm.addEventListener('submit', function (event) {
     commentElement.classList.add('comment');
     commentElement.dataset.commentId = timeFlag; // 存储评论的唯一标识符
     commentElement.innerHTML =
-    `
+        `
     <h3>${username}</h3>
     <p>${comment}</p>
     <button class="delete-btn">删除</button>

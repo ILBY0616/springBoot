@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="zh" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <title>生成二维码</title>
+    <style>
+        body {
+            font-family: "KaiTi", "楷体", Arial, sans-serif;
+            background-color: #f9f9f9;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        div {
+            background-color: #ffffff;
+            padding: 15px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            max-width: 500px; /* 最大宽度为 500px */
+            margin: 0 auto; /* 居中显示 */
+        }
+
+        h1 {
+            color: #333;
+            margin-bottom: 10px;
+            font-size: 18px;
+        }
+
+        form {
+            margin-bottom: 10px;
+        }
+
+        input, select {
+            margin-bottom: 5px;
+            padding: 8px;
+            width: calc(100% - 16px);
+            box-sizing: border-box;
+        }
+
+        input[type="submit"] {
+            padding: 8px 0;
+            background-color: gray;
+            color: #ffffff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            width: 100%;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #666666;
+        }
+
+        input[type="file"] {
+            border: 1px solid #ccc; /* 添加边框 */
+            border-radius: 5px; /* 添加边框圆角 */
+            padding: 8px; /* 添加内边距 */
+            width: calc(100% - 18px); /* 计算宽度 */
+            box-sizing: border-box; /* 计算宽度包括边框和内边距 */
+        }
+
+        h4 {
+            margin-top: 15px;
+            color: #555;
+            font-size: 12px;
+        }
+    </style>
+</head>
+<body>
+<div>
+    <h1>生成二维码</h1>
+    <form action="/generateQRCode" enctype="multipart/form-data" method="post">
+        <label>
+            <input name="width" placeholder="宽度" required type="number"/>
+        </label>
+        <label>
+            <input name="height" placeholder="高度" required type="number"/>
+        </label>
+        <label>
+            <input name="margin" placeholder="边距" required type="number"/>
+        </label>
+        <label>
+            <select name="level">
+                <option value="L">L - 7%</option>
+                <option value="M">M - 15%</option>
+                <option value="Q">Q - 25%</option>
+                <option value="H">H - 30%</option>
+            </select>
+        </label>
+        <label>
+            <input name="format" placeholder="图像格式 (png, jpg)" required type="text"/>
+        </label>
+        <label>
+            <input name="content" placeholder="二维码内容" required type="text"/>
+        </label>
+        <label>
+            <input name="foregroundColor" required type="color" value="#000000"/>
+        </label>
+        <label>
+            <input name="backgroundColor" required type="color" value="#FFFFFF"/>
+        </label>
+        <label>
+            <input accept="image/*" name="frontImage"
+                   style="border: 1px solid #ccc; border-radius: 5px; padding: 8px; width: calc(100% - 18px); box-sizing: border-box;"
+                   type="file"/>
+        </label>
+        <input type="submit" value="生成二维码"/>
+    </form>
+    <h4>软工21101班 202114060108号 姓名：邱鹏&copy;版权所有</h4>
+    <div th:text="${message}"></div>
+</div>
+</body>
+</html>

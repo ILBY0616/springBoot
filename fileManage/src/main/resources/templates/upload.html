@@ -3,16 +3,89 @@
 <head>
     <meta charset="UTF-8"/>
     <title>upload</title>
+    <style>
+        body {
+            font-family: "KaiTi", "楷体", Arial, sans-serif; /* 设置字体为楷体 */
+            background-color: #f9f9f9;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        div {
+            background-color: #ffffff; /* 设置div的背景色 */
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        h1 {
+            color: #333;
+            margin-bottom: 20px;
+        }
+
+        form {
+            margin-bottom: 20px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        input[type="file"] {
+            padding: 5px;
+            border: 1px solid #ccc;
+            border-radius: 3px;
+        }
+
+        input[type="submit"] {
+            padding: 10px 100px; /* 调整按钮的长度 */
+            background-color: gray; /* 改变按钮的颜色为灰色 */
+            color: #ffffff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            display: block; /* 让按钮居中显示 */
+            margin: 0 auto; /* 让按钮居中显示 */
+        }
+
+        input[type="submit"]:hover {
+            background-color: #666666; /* 改变鼠标悬停时按钮的颜色 */
+        }
+
+        h4 {
+            margin-top: 20px;
+            color: #555;
+        }
+    </style>
 </head>
 <body>
-<h1>文件上传</h1>
-<form action="uploadFile" method="post" enctype="multipart/form-data">
-    <p>选择文件1: <input type="file" name="fileName"/></p>
-    <p>选择文件2: <input type="file" name="fileName"/></p>
-    <p>选择文件3: <input type="file" name="fileName"/></p>
-    <p><input type="submit" value="提交"/></p>
-</form>
-<h4>软工21101班 202114060108号 姓名：邱鹏&copy;版权所有</h4>
-<p th:text="${message}"></p>
+<div>
+    <h1>上传文件</h1>
+    <form action="uploadFile" enctype="multipart/form-data" method="post">
+        <label>
+            选择文件1:
+            <input name="fileName" type="file"/>
+        </label>
+        <label>
+            选择文件2:
+            <input name="fileName" type="file"/>
+        </label>
+        <label>
+            选择文件3:
+            <input name="fileName" type="file"/>
+        </label>
+        <label>
+            <input type="submit" value="提交"/>
+        </label>
+    </form>
+    <h4>软工21101班 202114060108号 姓名：邱鹏&copy;版权所有</h4>
+    <div th:text="${message}"></div>
+</div>
 </body>
 </html>

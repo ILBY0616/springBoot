@@ -2,92 +2,92 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <title>海绵宝宝-角色介绍</title>
-    <link rel="stylesheet" href="/css/allBase.css">
-    <link rel="stylesheet" href="/css/roleIntroduction.css">
+    <link href="/css/allBase.css" rel="stylesheet">
+    <link href="/css/roleIntroduction.css" rel="stylesheet">
 </head>
 <body>
-    <div class="navDiv">
-        <img src="/resource/image/groupPhoto01.jpg" alt="groupPhoto01">
-        <img src="/resource/image/logo.png" alt="logo">
+<div class="navDiv">
+    <img alt="groupPhoto01" src="/resource/image/groupPhoto01.jpg">
+    <img alt="logo" src="/resource/image/logo.png">
+</div>
+<header class="navHeader">
+    <ul>
+        <li>
+            <a th:href="@{'/homePage'}">首页</a>
+        </li>
+        <li class="tabLi">
+            <a style="background-color: rgb(110, 139, 45);" th:href="@{'/roleIntroduction'}">角色介绍 &#x25bc;</a>
+            <ul class="tabUl">
+                <li><a href="#spongeBob">海绵宝宝</a></li>
+                <li><a href="#patrick">派大星</a></li>
+                <li><a href="#squidWard">章鱼哥</a></li>
+                <li><a href="#crabBoss">蟹老板</a></li>
+            </ul>
+        </li>
+        <li>
+            <a th:href="@{'/representativeWork'}">代表作品</a>
+        </li>
+        <li>
+            <a th:href="@{'/contactWithMe'}">与我交流</a>
+        </li>
+        <li>
+            <a th:href="@{'/userCenter'}" th:if="${session.user != null}">用户中心</a>
+            <a th:href="@{'/loginRegister'}" th:unless="${session.user != null}">登录注册</a>
+        </li>
+    </ul>
+</header>
+
+<div class="detailDiv01" id="spongeBob">
+    <div class="left">
+        <img alt="spongeBob" src="/resource/image/spongeBob.jpg">
     </div>
-    <header class="navHeader">
-        <ul>
-            <li>
-                <a th:href="@{'/homePage'}">首页</a>
-            </li>
-            <li class="tabLi">
-                <a th:href="@{'/roleIntroduction'}" style="background-color: rgb(110, 139, 45);">角色介绍 &#x25bc;</a>
-                <ul class="tabUl">
-                    <li><a href="#spongeBob">海绵宝宝</a></li>
-                    <li><a href="#patrick">派大星</a></li>
-                    <li><a href="#squidWard">章鱼哥</a></li>
-                    <li><a href="#crabBoss">蟹老板</a></li>
-                </ul>
-            </li>
-            <li>
-                <a th:href="@{'/representativeWork'}">代表作品</a>
-            </li>
-            <li>
-                <a th:href="@{'/contactWithMe'}">与我交流</a>
-            </li>
-            <li>
-                <a th:if="${session.user != null}" th:href="@{'/userCenter'}">用户中心</a>
-                <a th:unless="${session.user != null}" th:href="@{'/loginRegister'}">登录注册</a>
-            </li>
-        </ul>
-    </header>
-
-    <div class="detailDiv01" id="spongeBob">
-        <div class="left">
-            <img src="/resource/image/spongeBob.jpg" alt="spongeBob">
-        </div>
-        <div class="right">
-            <p>
-                《海绵宝宝》系列动画的同名主角。黄色长方形海绵，其身体构成如同清洁用海绵。生日是1986年7月14日。两只手各拥有四根手指。以棕色短裤、白色衬衫和红色领带为主要服装。即使身体被破坏，也能恢复原状。虽然有正常进食，但纯滤食海水也能继续存活。体力薄弱，且所谓的哑铃两端其实是绒毛玩具。
-            </p>
-        </div>
+    <div class="right">
+        <p>
+            《海绵宝宝》系列动画的同名主角。黄色长方形海绵，其身体构成如同清洁用海绵。生日是1986年7月14日。两只手各拥有四根手指。以棕色短裤、白色衬衫和红色领带为主要服装。即使身体被破坏，也能恢复原状。虽然有正常进食，但纯滤食海水也能继续存活。体力薄弱，且所谓的哑铃两端其实是绒毛玩具。
+        </p>
     </div>
+</div>
 
-    <div class="detailDiv02" id="patrick">
-        <div class="right">
-            <img src="/resource/image/patrick.jpg" alt="patrick">
-        </div>
-        <div class="left">
-            <p>
-                粉红色的海星。智商极低，头脑与身体仅使用插头连结。做什么事都会搞砸，但开船却异常厉害，居住在圆顶石头底下。懒惰并相当孩子气，时常在无意间呆滞的流口水，且讨厌洗澡、也不爱洗手、偏爱睡觉。兴趣是看电视。跟海绵宝宝的交情最好；并时常鼓励海绵宝宝做出一些危险行动，往往让彼此陷入困境。
-            </p>
-        </div>
+<div class="detailDiv02" id="patrick">
+    <div class="right">
+        <img alt="patrick" src="/resource/image/patrick.jpg">
     </div>
-
-    <div class="detailDiv01" id="squidWard">
-        <div class="left">
-            <img src="/resource/image/squidWard.jpg" alt="squidWard">
-        </div>
-        <div class="right">
-            <p>
-                大鼻子章鱼，容易愤怒且势利眼，相当自恋，自以为拥有艺术才能。目前是光头，但曾有过黄色长卷发。居住在一栋仿复活节岛人像的房屋。担任"蟹堡王"的柜台人员，但并不喜欢自己的工作，喜欢吹奏竖笛及采用多种风格画自画像。讨厌海绵宝宝和派大星，偶尔会对海绵宝宝表达认同，但通常是对他自己有利的时候。
-            </p>
-        </div>
+    <div class="left">
+        <p>
+            粉红色的海星。智商极低，头脑与身体仅使用插头连结。做什么事都会搞砸，但开船却异常厉害，居住在圆顶石头底下。懒惰并相当孩子气，时常在无意间呆滞的流口水，且讨厌洗澡、也不爱洗手、偏爱睡觉。兴趣是看电视。跟海绵宝宝的交情最好；并时常鼓励海绵宝宝做出一些危险行动，往往让彼此陷入困境。
+        </p>
     </div>
+</div>
 
-    <div class="detailDiv02" id="crabBoss">
-        <div class="right">
-            <img src="/resource/image/crabBoss.jpg" alt="crabBoss">
-        </div>
-        <div class="left">
-            <p>
-                红色螃蟹，本名尤金蟹。视金钱如生命，经常为了一块钱而去冒生命危险，极为自私。快餐店“蟹堡王”的经营者，多次向员工宣导要有时间观念，因为"时间就是金钱"。只要发现能发快财的产品，就会忽视老本蟹黄堡并转换目标。营业时间常在办公室看报纸、数钱、洗金钱浴等，喜欢看讽刺戏剧，和痞老板是死对头。
-            </p>
-        </div>
+<div class="detailDiv01" id="squidWard">
+    <div class="left">
+        <img alt="squidWard" src="/resource/image/squidWard.jpg">
     </div>
+    <div class="right">
+        <p>
+            大鼻子章鱼，容易愤怒且势利眼，相当自恋，自以为拥有艺术才能。目前是光头，但曾有过黄色长卷发。居住在一栋仿复活节岛人像的房屋。担任"蟹堡王"的柜台人员，但并不喜欢自己的工作，喜欢吹奏竖笛及采用多种风格画自画像。讨厌海绵宝宝和派大星，偶尔会对海绵宝宝表达认同，但通常是对他自己有利的时候。
+        </p>
+    </div>
+</div>
 
-    <button id="topButton" onclick="toTop()">▲</button>
+<div class="detailDiv02" id="crabBoss">
+    <div class="right">
+        <img alt="crabBoss" src="/resource/image/crabBoss.jpg">
+    </div>
+    <div class="left">
+        <p>
+            红色螃蟹，本名尤金蟹。视金钱如生命，经常为了一块钱而去冒生命危险，极为自私。快餐店“蟹堡王”的经营者，多次向员工宣导要有时间观念，因为"时间就是金钱"。只要发现能发快财的产品，就会忽视老本蟹黄堡并转换目标。营业时间常在办公室看报纸、数钱、洗金钱浴等，喜欢看讽刺戏剧，和痞老板是死对头。
+        </p>
+    </div>
+</div>
 
-    <footer>
-        &copy;软工21101班雷冰玉&nbsp;邱鹏
-    </footer>
+<button id="topButton" onclick="toTop()">▲</button>
+
+<footer>
+    &copy;软工21101班雷冰玉&nbsp;邱鹏
+</footer>
 </body>
 <script src="/js/allBase.js"></script>
 <script src="/js/roleIntroduction.js"></script>

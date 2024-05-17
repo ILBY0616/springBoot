@@ -6,10 +6,11 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class fileManage {
-    private static final Logger logger = LoggerFactory.getLogger(fileManage.class);
+public class FileManage {
+    private static final Logger logger = LoggerFactory.getLogger(FileManage.class);
+
     public static void main(String[] args) {
-        SpringApplication.run(fileManage.class, args);
+        SpringApplication.run(FileManage.class, args);
         try {
             Runtime.getRuntime().exec("cmd /c start http://localhost:8080/");
         } catch (Exception e) {

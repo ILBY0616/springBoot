@@ -2,94 +2,110 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <title>海绵宝宝-代表作品</title>
-    <link rel="stylesheet" href="/css/allBase.css">
-    <link rel="stylesheet" href="/css/representativeWork.css">
+    <link href="/css/allBase.css" rel="stylesheet">
+    <link href="/css/representativeWork.css" rel="stylesheet">
 </head>
 <body>
-    <div class="navDiv">
-        <img src="/resource/image/groupPhoto01.jpg" alt="groupPhoto01">
-        <img src="/resource/image/logo.png" alt="logo">
+<div class="navDiv">
+    <img alt="groupPhoto01" src="/resource/image/groupPhoto01.jpg">
+    <img alt="logo" src="/resource/image/logo.png">
+</div>
+<header class="navHeader">
+    <ul>
+        <li>
+            <a th:href="@{'/homePage'}">首页</a>
+        </li>
+        <li class="tabLi">
+            <a th:href="@{'/roleIntroduction'}">角色介绍 &#x25bc;</a>
+            <ul class="tabUl">
+                <li><a href="#">海绵宝宝</a></li>
+                <li><a href="#">派大星</a></li>
+                <li><a href="#">章鱼哥</a></li>
+                <li><a href="#">蟹老板</a></li>
+            </ul>
+        </li>
+        <li>
+            <a style="background-color: rgb(110, 139, 45);" th:href="@{'/representativeWork'}">代表作品</a>
+        </li>
+        <li>
+            <a th:href="@{'/contactWithMe'}">与我交流</a>
+        </li>
+        <li>
+            <a th:href="@{'/userCenter'}" th:if="${session.user != null}">用户中心</a>
+            <a th:href="@{'/loginRegister'}" th:unless="${session.user != null}">登录注册</a>
+        </li>
+    </ul>
+</header>
+
+<div class="main">
+    <div class="title">
+        <h2>经典作品</h2>
     </div>
-    <header class="navHeader">
-        <ul>
-            <li>
-                <a th:href="@{'/homePage'}">首页</a>
-            </li>
-            <li class="tabLi">
-                <a th:href="@{'/roleIntroduction'}">角色介绍 &#x25bc;</a>
-                <ul class="tabUl">
-                    <li><a href="#">海绵宝宝</a></li>
-                    <li><a href="#">派大星</a></li>
-                    <li><a href="#">章鱼哥</a></li>
-                    <li><a href="#">蟹老板</a></li>
-                </ul>
-            </li>
-            <li>
-                <a th:href="@{'/representativeWork'}" style="background-color: rgb(110, 139, 45);">代表作品</a>
-            </li>
-            <li>
-                <a th:href="@{'/contactWithMe'}">与我交流</a>
-            </li>
-            <li>
-                <a th:if="${session.user != null}" th:href="@{'/userCenter'}">用户中心</a>
-                <a th:unless="${session.user != null}" th:href="@{'/loginRegister'}">登录注册</a>
-            </li>
-        </ul>
-    </header>
-
-    <div class="main">
-        <div class="title">
-            <h2>经典作品</h2>
-        </div>
-        <div class="work">
-            <a href="https://v.qq.com/x/search/?q=%E6%B5%B7%E7%BB%B5%E5%AE%9D%E5%AE%9D+%E7%AC%AC1%E5%AD%A3&stag=0&smartbox_ab=" target="_blank">
-                <img src="/resource/image/work01.jpg" alt="work01"></a>
-            <a href="https://v.qq.com/x/search/?q=%E6%B5%B7%E7%BB%B5%E5%AE%9D%E5%AE%9D+%E7%AC%AC3%E5%AD%A3&stag=0&smartbox_ab=" target="_blank">
-                <img src="/resource/image/work02.jpg" alt="work02"></a>
-            <a href="https://v.qq.com/x/search/?q=%E6%B5%B7%E7%BB%B5%E5%AE%9D%E5%AE%9D+%E7%AC%AC4%E5%AD%A3&stag=0&smartbox_ab=" target="_blank">
-                <img src="/resource/image/work03.jpg" alt="work03"></a>
-            <a href="https://v.qq.com/x/search/?q=%E6%B5%B7%E7%BB%B5%E5%AE%9D%E5%AE%9D+%E7%AC%AC5%E5%AD%A3&stag=0&smartbox_ab=" target="_blank">
-                <img src="/resource/image/work04.jpg" alt="work04"></a>
-        </div>
-        <div class="work">
-            <a href="https://v.qq.com/x/search/?q=%E6%B5%B7%E7%BB%B5%E5%AE%9D%E5%AE%9D+%E7%AC%AC6%E5%AD%A3&stag=0&smartbox_ab=" target="_blank">
-                <img src="/resource/image/work05.jpg" alt="work05"></a>
-            <a href="https://v.qq.com/x/search/?q=%E6%B5%B7%E7%BB%B5%E5%AE%9D%E5%AE%9D+%E7%AC%AC7%E5%AD%A3&stag=0&smartbox_ab=" target="_blank">
-                <img src="/resource/image/work06.jpg" alt="work06"></a>
-            <a href="https://v.qq.com/x/search/?q=%E6%B5%B7%E7%BB%B5%E5%AE%9D%E5%AE%9D+%E7%AC%AC8%E5%AD%A3&stag=0&smartbox_ab=" target="_blank">
-                <img src="/resource/image/work07.jpg" alt="work07"></a>
-            <a href="https://v.qq.com/x/search/?q=%E6%B5%B7%E7%BB%B5%E5%AE%9D%E5%AE%9D+%E7%AC%AC9%E5%AD%A3&stag=0&smartbox_ab=" target="_blank">
-                <img src="/resource/image/work08.jpg" alt="work08"></a>
-        </div>
-        <div class="work">
-            <a href="https://v.qq.com/x/search/?q=%E6%B5%B7%E7%BB%B5%E5%AE%9D%E5%AE%9D+%E7%AC%AC2%E5%AD%A3&stag=0&smartbox_ab=" target="_blank">
-                <img src="/resource/image/work09.jpg" alt="work09"></a>
-            <a href="https://v.qq.com/x/search/?q=%E6%B5%B7%E7%BB%B5%E5%AE%9D%E5%AE%9D+%E7%AC%AC10%E5%AD%A3&stag=0&smartbox_ab=" target="_blank">
-                <img src="/resource/image/work10.jpg" alt="work10"></a>
-            <a href="https://v.qq.com/x/search/?q=%E6%B5%B7%E7%BB%B5%E5%AE%9D%E5%AE%9D+%E7%AC%AC11%E5%AD%A3&stag=0&smartbox_ab=" target="_blank">
-                <img src="/resource/image/work11.jpg" alt="work11"></a>
-            <a href="https://v.qq.com/x/search/?q=%E6%B5%B7%E7%BB%B5%E5%AE%9D%E5%AE%9D+%E7%AC%AC15%E5%AD%A3&stag=0&smartbox_ab=" target="_blank">
-                <img src="/resource/image/work12.jpg" alt="work12"></a>
-        </div>
-        <div class="work">
-            <a href="https://v.qq.com/x/search/?q=%E6%B5%B7%E7%BB%B5%E5%AE%9D%E5%AE%9D+%E7%AC%AC14%E5%AD%A3&stag=0&smartbox_ab=" target="_blank">
-                <img src="/resource/image/work13.jpg" alt="work13"></a>
-            <a href="https://v.qq.com/x/search/?q=%E6%B5%B7%E7%BB%B5%E5%AE%9D%E5%AE%9D+%E7%AC%AC15%E5%AD%A3&stag=0&smartbox_ab=" target="_blank">
-                <img src="/resource/image/work14.jpg" alt="work14"></a>
-            <a href="https://v.qq.com/x/search/?q=%E6%B5%B7%E7%BB%B5%E5%AE%9D%E5%AE%9D+%E7%AC%AC17%E5%AD%A3&stag=0&smartbox_ab=" target="_blank">
-                <img src="/resource/image/work15.jpg" alt="15"></a>
-            <a href="https://v.qq.com/x/search/?q=%E6%B5%B7%E7%BB%B5%E5%AE%9D%E5%AE%9D+%E7%AC%AC18%E5%AD%A3&stag=0&smartbox_ab=" target="_blank">
-                <img src="/resource/image/work16.jpg" alt="work16"></a>
-        </div>
+    <div class="work">
+        <a href="https://v.qq.com/x/search/?q=%E6%B5%B7%E7%BB%B5%E5%AE%9D%E5%AE%9D+%E7%AC%AC1%E5%AD%A3&stag=0&smartbox_ab="
+           target="_blank">
+            <img alt="work01" src="/resource/image/work01.jpg"></a>
+        <a href="https://v.qq.com/x/search/?q=%E6%B5%B7%E7%BB%B5%E5%AE%9D%E5%AE%9D+%E7%AC%AC3%E5%AD%A3&stag=0&smartbox_ab="
+           target="_blank">
+            <img alt="work02" src="/resource/image/work02.jpg"></a>
+        <a href="https://v.qq.com/x/search/?q=%E6%B5%B7%E7%BB%B5%E5%AE%9D%E5%AE%9D+%E7%AC%AC4%E5%AD%A3&stag=0&smartbox_ab="
+           target="_blank">
+            <img alt="work03" src="/resource/image/work03.jpg"></a>
+        <a href="https://v.qq.com/x/search/?q=%E6%B5%B7%E7%BB%B5%E5%AE%9D%E5%AE%9D+%E7%AC%AC5%E5%AD%A3&stag=0&smartbox_ab="
+           target="_blank">
+            <img alt="work04" src="/resource/image/work04.jpg"></a>
     </div>
+    <div class="work">
+        <a href="https://v.qq.com/x/search/?q=%E6%B5%B7%E7%BB%B5%E5%AE%9D%E5%AE%9D+%E7%AC%AC6%E5%AD%A3&stag=0&smartbox_ab="
+           target="_blank">
+            <img alt="work05" src="/resource/image/work05.jpg"></a>
+        <a href="https://v.qq.com/x/search/?q=%E6%B5%B7%E7%BB%B5%E5%AE%9D%E5%AE%9D+%E7%AC%AC7%E5%AD%A3&stag=0&smartbox_ab="
+           target="_blank">
+            <img alt="work06" src="/resource/image/work06.jpg"></a>
+        <a href="https://v.qq.com/x/search/?q=%E6%B5%B7%E7%BB%B5%E5%AE%9D%E5%AE%9D+%E7%AC%AC8%E5%AD%A3&stag=0&smartbox_ab="
+           target="_blank">
+            <img alt="work07" src="/resource/image/work07.jpg"></a>
+        <a href="https://v.qq.com/x/search/?q=%E6%B5%B7%E7%BB%B5%E5%AE%9D%E5%AE%9D+%E7%AC%AC9%E5%AD%A3&stag=0&smartbox_ab="
+           target="_blank">
+            <img alt="work08" src="/resource/image/work08.jpg"></a>
+    </div>
+    <div class="work">
+        <a href="https://v.qq.com/x/search/?q=%E6%B5%B7%E7%BB%B5%E5%AE%9D%E5%AE%9D+%E7%AC%AC2%E5%AD%A3&stag=0&smartbox_ab="
+           target="_blank">
+            <img alt="work09" src="/resource/image/work09.jpg"></a>
+        <a href="https://v.qq.com/x/search/?q=%E6%B5%B7%E7%BB%B5%E5%AE%9D%E5%AE%9D+%E7%AC%AC10%E5%AD%A3&stag=0&smartbox_ab="
+           target="_blank">
+            <img alt="work10" src="/resource/image/work10.jpg"></a>
+        <a href="https://v.qq.com/x/search/?q=%E6%B5%B7%E7%BB%B5%E5%AE%9D%E5%AE%9D+%E7%AC%AC11%E5%AD%A3&stag=0&smartbox_ab="
+           target="_blank">
+            <img alt="work11" src="/resource/image/work11.jpg"></a>
+        <a href="https://v.qq.com/x/search/?q=%E6%B5%B7%E7%BB%B5%E5%AE%9D%E5%AE%9D+%E7%AC%AC15%E5%AD%A3&stag=0&smartbox_ab="
+           target="_blank">
+            <img alt="work12" src="/resource/image/work12.jpg"></a>
+    </div>
+    <div class="work">
+        <a href="https://v.qq.com/x/search/?q=%E6%B5%B7%E7%BB%B5%E5%AE%9D%E5%AE%9D+%E7%AC%AC14%E5%AD%A3&stag=0&smartbox_ab="
+           target="_blank">
+            <img alt="work13" src="/resource/image/work13.jpg"></a>
+        <a href="https://v.qq.com/x/search/?q=%E6%B5%B7%E7%BB%B5%E5%AE%9D%E5%AE%9D+%E7%AC%AC15%E5%AD%A3&stag=0&smartbox_ab="
+           target="_blank">
+            <img alt="work14" src="/resource/image/work14.jpg"></a>
+        <a href="https://v.qq.com/x/search/?q=%E6%B5%B7%E7%BB%B5%E5%AE%9D%E5%AE%9D+%E7%AC%AC17%E5%AD%A3&stag=0&smartbox_ab="
+           target="_blank">
+            <img alt="15" src="/resource/image/work15.jpg"></a>
+        <a href="https://v.qq.com/x/search/?q=%E6%B5%B7%E7%BB%B5%E5%AE%9D%E5%AE%9D+%E7%AC%AC18%E5%AD%A3&stag=0&smartbox_ab="
+           target="_blank">
+            <img alt="work16" src="/resource/image/work16.jpg"></a>
+    </div>
+</div>
 
-    <button id="topButton" onclick="toTop()">▲</button>
+<button id="topButton" onclick="toTop()">▲</button>
 
-    <footer>
-        &copy;软工21101班雷冰玉&nbsp;邱鹏
-    </footer>
+<footer>
+    &copy;软工21101班雷冰玉&nbsp;邱鹏
+</footer>
 </body>
 <script src="/js/allBase.js"></script>
 <script src="/js/representativeWork.js"></script>

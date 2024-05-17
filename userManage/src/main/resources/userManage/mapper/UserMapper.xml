@@ -22,9 +22,9 @@
     </delete>
     <update id="updateUser">
         update user
-        set name = #{name},
-        password = #{password},
-        role = #{role}
+        set name     = #{name},
+            password = #{password},
+            role     = #{role}
         WHERE uid = #{uid}
     </update>
     <select id="findUser" resultType="userManage.pojo.User">

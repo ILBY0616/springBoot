@@ -3,14 +3,80 @@
 <head>
     <meta charset="UTF-8"/>
     <title>download</title>
+    <style>
+        body {
+            font-family: "KaiTi", "楷体", Arial, sans-serif; /* 设置字体为楷体 */
+            background-color: #f9f9f9;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        div {
+            background-color: #ffffff; /* 设置div的背景色 */
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        h1 {
+            color: #333;
+            margin-bottom: 20px;
+        }
+
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        ul li {
+            margin: 10px 0;
+            background-color: #e9ecef; /* 设置li的背景色 */
+            padding: 10px;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+
+        ul li:hover {
+            background-color: #d1d8e0; /* 鼠标悬停时的背景色 */
+        }
+
+        a {
+            text-decoration: none;
+            color: #000000; /* 将链接文字颜色设置为黑色 */
+            font-size: 18px;
+            transition: color 0.3s;
+        }
+
+        a:hover {
+            color: #555555; /* 设置链接悬停时的颜色为深灰色 */
+        }
+
+        h4 {
+            margin-top: 20px;
+            color: #555;
+        }
+    </style>
 </head>
 <body>
-<h1>下载文件</h1>
-<p>下载：<a href="/downloadFile?fileName=1.jpg">图片1</a></p>
-<p>下载：<a href="/downloadFile?fileName=2.jpg">图片2</a></p>
-<p>下载：<a href="/downloadFile?fileName=3.jpg">图片3</a></p>
-<h4>软工21101班 202114060108号 姓名：邱鹏&copy;版权所有</h4>
-<p th:text="${message}"></p>
+<div>
+    <h1>下载文件</h1>
+    <ul>
+        <li>
+            下载：<a href="/downloadFile?fileName=1.jpg">图片1</a>
+        </li>
+        <li>
+            下载：<a href="/downloadFile?fileName=2.jpg">图片2</a>
+        </li>
+        <li>
+            下载：<a href="/downloadFile?fileName=3.jpg">图片3</a>
+        </li>
+    </ul>
+    <h4>软工21101班 202114060108号 姓名：邱鹏&copy;版权所有</h4>
+    <div th:text="${message}"></div>
+</div>
 </body>
-
 </html>

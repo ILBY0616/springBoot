@@ -23,15 +23,15 @@
     </delete>
     <update id="updateUser">
         update user
-        set name = #{name},
-        password = #{password},
-        birthday = #{birthday},
-        role = #{role},
-        email = #{email},
-        address = #{address},
-        status = #{status},
-        login_time = #{loginTime},
-        register_time = #{registerTime}
+        set name          = #{name},
+            password      = #{password},
+            birthday      = #{birthday},
+            role          = #{role},
+            email         = #{email},
+            address       = #{address},
+            status        = #{status},
+            login_time    = #{loginTime},
+            register_time = #{registerTime}
         WHERE uid = #{uid}
     </update>
     <select id="findUserByUid" resultType="User">

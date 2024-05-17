@@ -2,15 +2,15 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <title>海绵宝宝-用户中心</title>
-    <link rel="stylesheet" href="/css/allBase.css">
-    <link rel="stylesheet" href="/css/userCenter.css">
+    <link href="/css/allBase.css" rel="stylesheet">
+    <link href="/css/userCenter.css" rel="stylesheet">
 </head>
 <body>
 <div class="navDiv">
-    <img src="/resource/image/groupPhoto01.jpg" alt="groupPhoto01">
-    <img src="/resource/image/logo.png" alt="logo">
+    <img alt="groupPhoto01" src="/resource/image/groupPhoto01.jpg">
+    <img alt="logo" src="/resource/image/logo.png">
 </div>
 <header class="navHeader">
     <ul>
@@ -33,7 +33,7 @@
             <a th:href="@{'/contactWithMe'}">与我交流</a>
         </li>
         <li>
-            <a th:href="@{'/loginRegister'}" style="background-color: rgb(110, 139, 45);">用户中心</a>
+            <a style="background-color: rgb(110, 139, 45);" th:href="@{'/loginRegister'}">用户中心</a>
         </li>
     </ul>
 </header>

@@ -2,15 +2,15 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <title>海绵宝宝-登录注册</title>
-    <link rel="stylesheet" href="/css/allBase.css">
-    <link rel="stylesheet" href="/css/loginRegister.css">
+    <link href="/css/allBase.css" rel="stylesheet">
+    <link href="/css/loginRegister.css" rel="stylesheet">
 </head>
 <body>
 <div class="navDiv">
-    <img src="/resource/image/groupPhoto01.jpg" alt="groupPhoto01">
-    <img src="/resource/image/logo.png" alt="logo">
+    <img alt="groupPhoto01" src="/resource/image/groupPhoto01.jpg">
+    <img alt="logo" src="/resource/image/logo.png">
 </div>
 <header class="navHeader">
     <ul>
@@ -33,25 +33,25 @@
             <a th:href="@{'/contactWithMe'}">与我交流</a>
         </li>
         <li>
-            <a th:href="@{'/loginRegister'}" style="background-color: rgb(110, 139, 45);">登录注册</a>
+            <a style="background-color: rgb(110, 139, 45);" th:href="@{'/loginRegister'}">登录注册</a>
         </li>
     </ul>
 </header>
 
 <main>
     <h2>登录</h2>
-    <form id="loginForm" th:action="@{/login}" th:object="${user}" method="post">
+    <form id="loginForm" method="post" th:action="@{/login}" th:object="${user}">
         <div class="rowDiv">
             <label for="loginEmail">QQ邮箱</label>
-            <input type="email" id="loginEmail" name="loginEmail" placeholder="请输入您的QQ邮箱" required
-                   th:field="*{email}">
-            <div id="loginEmailError" class="errorMessage"></div>
+            <input id="loginEmail" name="loginEmail" placeholder="请输入您的QQ邮箱" required th:field="*{email}"
+                   type="email">
+            <div class="errorMessage" id="loginEmailError"></div>
         </div>
         <div class="rowDiv">
             <label for="loginPassword">密码</label>
-            <input type="text" id="loginPassword" name="loginPassword" placeholder="请输入您的密码" required
-                   th:field="*{password}">
-            <div id="loginPasswordError" class="errorMessage"></div>
+            <input id="loginPassword" name="loginPassword" placeholder="请输入您的密码" required th:field="*{password}"
+                   type="text">
+            <div class="errorMessage" id="loginPasswordError"></div>
         </div>
         <div class="rowDiv">
             <button type="submit">登录</button>
@@ -62,36 +62,36 @@
         <div class="rowDiv">
             <div class="colDiv">
                 <label for="registerName">姓名</label>
-                <input type="text" id="registerName" name="registerName" placeholder="请输入您的姓名" required>
-                <div id="registerNameError" class="errorMessage"></div>
+                <input id="registerName" name="registerName" placeholder="请输入您的姓名" required type="text">
+                <div class="errorMessage" id="registerNameError"></div>
             </div>
             <div class="colDiv">
                 <label for="registerEmail">QQ邮箱</label>
-                <input type="email" id="registerEmail" name="registerEmail" placeholder="请输入您的QQ邮箱"
-                       required>
-                <div id="registerEmailError" class="errorMessage"></div>
+                <input id="registerEmail" name="registerEmail" placeholder="请输入您的QQ邮箱" required
+                       type="email">
+                <div class="errorMessage" id="registerEmailError"></div>
             </div>
         </div>
         <div class="rowDiv">
             <div class="colDiv">
                 <label for="registerPassword">密码</label>
-                <input type="text" id="registerPassword" name="registerPassword" placeholder="请输入您的密码"
-                       required>
-                <div id="registerPasswordError" class="errorMessage"></div>
+                <input id="registerPassword" name="registerPassword" placeholder="请输入您的密码" required
+                       type="text">
+                <div class="errorMessage" id="registerPasswordError"></div>
             </div>
             <div class="colDiv">
                 <label for="registerConfirmPassword">确认密码</label>
-                <input type="text" id="registerConfirmPassword" name="registerConfirmPassword"
-                       placeholder="请确认您的密码" required>
-                <div id="registerConfirmPasswordError" class="errorMessage"></div>
+                <input id="registerConfirmPassword" name="registerConfirmPassword" placeholder="请确认您的密码"
+                       required type="text">
+                <div class="errorMessage" id="registerConfirmPasswordError"></div>
             </div>
         </div>
         <div class="rowDiv">
             <div class="colDiv">
-                <input type="checkbox" id="registerAccord" name="registerAccord" required>
+                <input id="registerAccord" name="registerAccord" required type="checkbox">
             </div>
             <div class="colDiv">
-                <label for="registerAccord" class="accord">我同意接受条款和条件</label>
+                <label class="accord" for="registerAccord">我同意接受条款和条件</label>
             </div>
         </div>
         <div class="rowDiv">
