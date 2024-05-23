@@ -16,6 +16,5 @@ public class SpongeBob {
         } catch (Exception e) {
             logger.error("Failed to open browser", e);
         }
-        System.out.println("http://localhost:8080/homePage");
     }
 }
