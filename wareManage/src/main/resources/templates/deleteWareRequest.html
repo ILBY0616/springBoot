@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <title>deleteWareRequest</title>
+    <link rel="stylesheet" th:href="@{/css/header.css}"/>
+    <link rel="stylesheet" th:href="@{/css/table.css}"/>
+    <link rel="stylesheet" th:href="@{/css/footer.css}"/>
+</head>
+<body>
+<header th:replace="header :: header"></header>
+<form method="post" th:action="@{/deleteWareResponse}">
+    <table>
+        <caption>删除商品</caption>
+        <tr>
+            <td class="c1">商品编号：</td>
+            <td>
+                <label>
+                    <input name="id" type="text">
+                </label>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2"><input class="button" type="submit" value="删除"></td>
+        </tr>
+    </table>
+</form>
+<footer th:replace="footer :: footer"></footer>
+</body>
+</html>

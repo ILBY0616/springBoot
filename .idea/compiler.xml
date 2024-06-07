@@ -10,6 +10,7 @@
         <module name="fileManage" />
         <module name="userManage" />
         <module name="scoreManage" />
+        <module name="wareManage" />
         <module name="spongeBob" />
       </profile>
     </annotationProcessing>
@@ -28,6 +29,7 @@
       <module name="spongeBob" options="-parameters" />
       <module name="testManage" options="-parameters" />
       <module name="userManage" options="-parameters" />
+      <module name="wareManage" options="-parameters" />
     </option>
   </component>
 </project>

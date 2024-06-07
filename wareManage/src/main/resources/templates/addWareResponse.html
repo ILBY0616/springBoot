@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <title>addWareResponse</title>
+    <link rel="stylesheet" th:href="@{/css/header.css}"/>
+    <link rel="stylesheet" th:href="@{/css/table.css}">
+    <link rel="stylesheet" th:href="@{/css/footer.css}"/>
+    <style>
+        td {
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+<header th:replace="header :: header"></header>
+<table>
+    <tr>
+        <td th:text="${message}"></td>
+    </tr>
+</table>
+<footer th:replace="footer :: footer"></footer>
+</body>
+</html>

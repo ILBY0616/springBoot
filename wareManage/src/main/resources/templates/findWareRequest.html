@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>findWareRequest</title>
+    <link rel="stylesheet" th:href="@{/css/header.css}"/>
+    <link rel="stylesheet" th:href="@{/css/table.css}">
+    <link rel="stylesheet" th:href="@{/css/footer.css}"/>
+</head>
+<body>
+<header th:replace="header :: header"></header>
+<form method="post" th:action="@{/findWareResponse}">
+    <table>
+        <caption>查询商品</caption>
+        <tr>
+            <td class="c1">
+                <label>
+                    <select name="attribute">
+                        <option value="id">商品编号</option>
+                        <option value="name">商品名称</option>
+                        <option value="brand">商品品牌</option>
+                        <option value="category">商品类型</option>
+                        <option value="price">商品价格</option>
+                        <option value="stock">商品库存</option>
+                        <option value="picAddress">商品图片</option>
+                    </select>
+                </label>
+            </td>
+            <td>
+                <label>
+                    <input autofocus name="value" type="text">
+                </label>
+            </td>
+            <td>
+                <input class="button" type="submit" value="查询">
+            </td>
+        </tr>
+    </table>
+</form>
+<footer th:replace="footer :: footer"></footer>
+</body>
+</html>

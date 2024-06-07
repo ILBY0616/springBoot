@@ -8,6 +8,7 @@
         <module>spongeBob</module>
         <module>fileManage</module>
         <module>scoreManage</module>
+        <module>wareManage</module>
     </modules>
     <version>1.0</version>
     <name>springBoot</name>

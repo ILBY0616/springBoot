@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <title>updateWareRequest</title>
+    <link rel="stylesheet" th:href="@{/css/header.css}"/>
+    <link rel="stylesheet" th:href="@{/css/table.css}">
+    <link rel="stylesheet" th:href="@{/css/footer.css}"/>
+</head>
+<body>
+<header th:replace="header :: header"></header>
+<form method="post" th:action="@{/updateWareResponse}">
+    <table>
+        <caption>修改商品</caption>
+        <tr>
+            <td class="c1">商品编号：</td>
+            <td>
+                <label>
+                    <input autofocus name="id" type="text">
+                </label>
+            </td>
+        </tr>
+        <tr>
+            <td class="c1">商品名称：</td>
+            <td>
+                <label>
+                    <input name="name" type="text">
+                </label>
+            </td>
+        </tr>
+        <tr>
+            <td class="c1">商品品牌：</td>
+            <td>
+                <label>
+                    <input name="brand" type="text">
+                </label>
+            </td>
+        </tr>
+        <tr>
+            <td class="c1">商品类型：</td>
+            <td>
+                <label>
+                    <input name="category" type="text">
+                </label>
+            </td>
+        </tr>
+        <tr>
+            <td class="c1">商品价格：</td>
+            <td>
+                <label>
+                    <input name="price" type="text">
+                </label>
+            </td>
+        </tr>
+        <tr>
+            <td class="c1">商品库存：</td>
+            <td>
+                <label>
+                    <input name="stock" type="text">
+                </label>
+            </td>
+        </tr>
+        <tr>
+            <td class="c1">商品图片：</td>
+            <td>
+                <label>
+                    <input name="picAddress" type="text">
+                </label>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2"><input class="button" type="submit" value="修改"></td>
+        </tr>
+    </table>
+</form>
+<footer th:replace="footer :: footer"></footer>
+</body>
+</html>

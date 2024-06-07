@@ -1,0 +1,20 @@
+@charset "UTF-8";
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+h2 {
+    font: 20px bold 仿宋;
+    color: chocolate;
+    text-align: center;
+}
+
+footer {
+    margin-top: 20px;
+    border-top: 3px solid chocolate;
+    height: 100px;
+    line-height: 100px;
+}

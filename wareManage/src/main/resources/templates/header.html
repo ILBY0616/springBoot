@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="zh" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>header</title>
+    <link rel="stylesheet" th:href="@{/css/header.css}"/>
+</head>
+<body>
+<header th:fragment="header">
+    <h1>商品管理</h1>
+    <ul>
+        <li><a th:href="@{/addWareRequest}">增加商品</a></li>
+        <li><a th:href="@{/deleteWareRequest}">删除商品</a></li>
+        <li><a th:href="@{/updateWareRequest}">修改商品</a></li>
+        <li><a th:href="@{/findWareRequest}">查询商品</a></li>
+        <li><a th:href="@{/findAllWare}">展示商品</a></li>
+    </ul>
+</header>
+</body>
+</html>

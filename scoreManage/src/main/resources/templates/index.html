@@ -13,6 +13,7 @@
             align-items: center;
             height: 100vh;
         }
+
         div {
             background-color: #ffffff;
             padding: 20px;
@@ -22,14 +23,17 @@
             max-width: 300px; /* 设置最大宽度 */
             margin: 0 auto; /* 居中对称 */
         }
+
         h1 {
             color: #333;
             margin-bottom: 20px;
             font-size: 18px;
         }
+
         form {
             margin-bottom: 10px;
         }
+
         input[type="submit"] {
             width: 100%;
             padding: 10px;
@@ -40,9 +44,11 @@
             cursor: pointer;
             transition: background-color 0.3s;
         }
+
         input[type="submit"]:hover {
             background-color: #45a049;
         }
+
         h5 {
             margin-top: 15px;
             color: #555;
@@ -53,12 +59,12 @@
 <body>
 <div>
     <h1>选择功能</h1>
-    <form th:action="@{/add}" method="post">
+    <form method="post" th:action="@{/add}">
         <label>
             <input type="submit" value="添加成绩"/>
         </label>
     </form>
-    <form th:action="@{/find}" method="post">
+    <form method="post" th:action="@{/find}">
         <label>
             <input type="submit" value="查询成绩"/>
         </label>

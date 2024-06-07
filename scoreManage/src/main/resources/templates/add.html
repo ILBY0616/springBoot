@@ -13,6 +13,7 @@
             align-items: center;
             height: 100vh;
         }
+
         div {
             background-color: #ffffff;
             padding: 20px;
@@ -21,20 +22,24 @@
             width: 300px; /* 固定宽度，使其居中对称 */
             text-align: center;
         }
+
         table {
             width: 100%;
             border-collapse: collapse;
             margin-bottom: 10px;
         }
+
         caption {
             font-size: 18px;
             margin-bottom: 10px;
             font-weight: bold;
         }
+
         td {
             padding: 5px;
             text-align: left;
         }
+
         input[type="text"] {
             width: calc(100% - 12px); /* 使输入框充满单元格 */
             padding: 5px;
@@ -43,6 +48,7 @@
             border-radius: 3px;
             box-sizing: border-box;
         }
+
         input[type="submit"] {
             width: 100%;
             padding: 10px;
@@ -53,9 +59,11 @@
             cursor: pointer;
             transition: background-color 0.3s;
         }
+
         input[type="submit"]:hover {
             background-color: #45a049;
         }
+
         h5 {
             margin-top: 10px;
             color: #555;
@@ -65,14 +73,14 @@
 </head>
 <body>
 <div>
-    <form th:action="@{/addScore}" method="post">
+    <form method="post" th:action="@{/addScore}">
         <table>
             <caption>添加成绩</caption>
             <tr>
                 <td>学号：</td>
                 <td>
                     <label>
-                        <input type="text" name="id" autofocus>
+                        <input autofocus name="id" type="text">
                     </label>
                 </td>
             </tr>
@@ -80,7 +88,7 @@
                 <td>姓名：</td>
                 <td>
                     <label>
-                        <input type="text" name="name">
+                        <input name="name" type="text">
                     </label>
                 </td>
             </tr>
@@ -88,7 +96,7 @@
                 <td>高等数学：</td>
                 <td>
                     <label>
-                        <input type="text" name="mathScore">
+                        <input name="mathScore" type="text">
                     </label>
                 </td>
             </tr>
@@ -96,7 +104,7 @@
                 <td>大学英语：</td>
                 <td>
                     <label>
-                        <input type="text" name="englishScore">
+                        <input name="englishScore" type="text">
                     </label>
                 </td>
             </tr>
@@ -104,7 +112,7 @@
                 <td>程序设计：</td>
                 <td>
                     <label>
-                        <input type="text" name="programScore">
+                        <input name="programScore" type="text">
                     </label>
                 </td>
             </tr>
@@ -112,7 +120,7 @@
                 <td>数据库原理：</td>
                 <td>
                     <label>
-                        <input type="text" name="databaseScore">
+                        <input name="databaseScore" type="text">
                     </label>
                 </td>
             </tr>

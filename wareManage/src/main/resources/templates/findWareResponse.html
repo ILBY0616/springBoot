@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <title>findWareResponse</title>
+    <link rel="stylesheet" th:href="@{/css/header.css}"/>
+    <link rel="stylesheet" th:href="@{/css/table.css}">
+    <link rel="stylesheet" th:href="@{/css/footer.css}"/>
+</head>
+<body>
+<header th:replace="header :: header"></header>
+<table>
+    <caption>展示商品</caption>
+    <thead>
+    <tr>
+        <th>商品编号</th>
+        <th>商品名称</th>
+        <th>商品品牌</th>
+        <th>商品类型</th>
+        <th>商品价格</th>
+        <th>商品库存</th>
+        <th>商品图片</th>
+    </tr>
+    </thead>
+    <tbody th:each="ware : ${wareList}">
+    <tr>
+        <td th:text="${ware.id}"></td>
+        <td th:text="${ware.name}"></td>
+        <td th:text="${ware.brand}"></td>
+        <td th:text="${ware.category}"></td>
+        <td th:text="${ware.price}"></td>
+        <td th:text="${ware.stock}"></td>
+        <td><img alt="商品图片" th:src="@{${ware.picAddress}}"/></td>
+    </tr>
+    </tbody>
+</table>
+<footer th:replace="footer :: footer"></footer>
+</body>
+</html>

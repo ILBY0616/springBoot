@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!--唯一接口标识-->
+<mapper namespace="wareManage.mapper.WareMapper">
+    <!--唯一方法标识-->
+    <insert id="addWare" parameterType="Ware">
+        insert into ware (id, name, brand, category, price, stock, picAddress)
+        values (#{id}, #{name}, #{brand}, #{category}, #{price}, #{stock}, #{picAddress})
+    </insert>
+    <delete id="deleteWareById" parameterType="int">
+        delete
+        from ware
+        where id = #{id}
+    </delete>
+    <update id="updateWareById" parameterType="Ware">
+        update ware
+        <set>
+            <if test="name != null and name != ''">
+                name = #{name},
+            </if>
+            <if test="brand != null and brand != ''">
+                brand = #{brand},
+            </if>
+            <if test="category != null and category != ''">
+                category = #{category},
+            </if>
+            <if test="price != null and price != 0.0">
+                price = #{price},
+            </if>
+            <if test="stock != null and stock != 0">
+                stock = #{stock},
+            </if>
+            <if test="picAddress != null and picAddress != ''">
+                picAddress = #{picAddress},
+            </if>
+        </set>
+        where id = #{id}
+    </update>
+    <select id="findAllWare" parameterType="Ware" resultType="Ware">
+        select *
+        from ware
+    </select>
+    <select id="findWareByAttribute" parameterType="Ware" resultType="Ware">
+        select *
+        from ware
+        <where>
+            <choose>
+                <when test="id != null and id != 0">
+                    and id = #{id}
+                </when>
+                <when test="name != null and name != ''">
+                    and name = #{name}
+                </when>
+                <when test="brand != null and brand != ''">
+                    and brand = #{brand}
+                </when>
+                <when test="category != null and category != ''">
+                    and category = #{category}
+                </when>
+                <when test="price != null and price != 0.0">
+                    and price = #{price}
+                </when>
+                <when test="stock != null and stock != 0">
+                    and stock = #{stock}
+                </when>
+                <when test="picAddress != null and picAddress != ''">
+                    and picAddress = #{picAddress}
+                </when>
+                <otherwise>
+                    and 1 = 0
+                </otherwise>
+            </choose>
+        </where>
+    </select>
+</mapper>
