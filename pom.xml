@@ -4,10 +4,9 @@
     <artifactId>springBoot</artifactId>
     <packaging>pom</packaging>
     <modules>
-        <module>userManage</module>
-        <module>spongeBob</module>
         <module>fileManage</module>
         <module>scoreManage</module>
+        <module>userManage</module>
         <module>wareManage</module>
     </modules>
     <version>1.0</version>
