@@ -8,16 +8,6 @@
         <option value="$PROJECT_DIR$/scoreManage/pom.xml" />
       </list>
     </option>
-    <option name="ignoredFiles">
-      <set>
-        <option value="$PROJECT_DIR$/Lab5Project/pom.xml" />
-        <option value="$PROJECT_DIR$/familyManage/pom.xml" />
-        <option value="$PROJECT_DIR$/financeManage/pom.xml" />
-        <option value="$PROJECT_DIR$/pom.xml" />
-        <option value="$PROJECT_DIR$/spongeBob/pom.xml" />
-        <option value="$PROJECT_DIR$/testManage/pom.xml" />
-      </set>
-    </option>
   </component>
   <component name="ProjectInspectionProfilesVisibleTreeState">
     <entry key="Project Default">

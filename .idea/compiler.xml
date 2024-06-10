@@ -17,7 +17,6 @@
       <module name="familyManage" target="11" />
       <module name="financeManage" target="11" />
       <module name="spongeBob" target="11" />
-      <module name="springBoot" target="11" />
       <module name="testManage" target="11" />
     </bytecodeTargetLevel>
   </component>
