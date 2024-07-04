@@ -4,5 +4,6 @@
     <file url="file://$PROJECT_DIR$" libraries="{bootstrap}" />
     <file url="file://$PROJECT_DIR$/fileManage" libraries="{bootstrap}" />
     <file url="file://$PROJECT_DIR$/userManage" libraries="{bootstrap}" />
+    <excludedPredefinedLibrary name="springBoot/studentManage/front/node_modules" />
   </component>
 </project>

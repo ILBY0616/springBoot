@@ -24,8 +24,9 @@
         update user
         set name     = #{name},
             password = #{password},
-            role     = #{role}
-        WHERE uid = #{uid}
+            role     = #{role},
+            status   = #{status}
+        where uid = #{uid}
     </update>
     <select id="findUser" resultType="userManage.pojo.User">
         select *

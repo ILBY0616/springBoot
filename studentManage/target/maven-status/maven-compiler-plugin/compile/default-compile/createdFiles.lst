@@ -1,0 +1,7 @@
+studentManage\service\impl\StudentServiceImpl.class
+studentManage\mapper\StudentMapper.class
+studentManage\StudentManage.class
+studentManage\entity\Student.class
+studentManage\controller\StudentController.class
+studentManage\service\StudentService.class
+studentManage\configurer\CorsConfigurer.class

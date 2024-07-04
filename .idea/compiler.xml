@@ -9,11 +9,13 @@
         <outputRelativeToContentRoot value="true" />
         <module name="fileManage" />
         <module name="userManage" />
+        <module name="studentManage" />
         <module name="scoreManage" />
         <module name="wareManage" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel target="11">
+      <module name="back" target="11" />
       <module name="familyManage" target="11" />
       <module name="financeManage" target="11" />
       <module name="spongeBob" target="11" />
@@ -22,11 +24,13 @@
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="back" options="-parameters" />
       <module name="familyManage" options="-parameters" />
       <module name="fileManage" options="-parameters" />
       <module name="financeManage" options="-parameters" />
       <module name="scoreManage" options="-parameters" />
       <module name="spongeBob" options="-parameters" />
+      <module name="studentManage" options="-parameters" />
       <module name="testManage" options="-parameters" />
       <module name="userManage" options="-parameters" />
       <module name="wareManage" options="-parameters" />

@@ -8,13 +8,16 @@
         <module>scoreManage</module>
         <module>userManage</module>
         <module>wareManage</module>
+        <module>studentManage</module>
     </modules>
     <version>1.0</version>
     <name>springBoot</name>
     <url>https://maven.apache.org</url>
+
     <parent>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
         <version>2.7.18</version>
     </parent>
+
 </project>

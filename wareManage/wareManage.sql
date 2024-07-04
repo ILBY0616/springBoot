@@ -1,4 +1,4 @@
-create database springBoot;
+create database if not exists springBoot;
 
 use springBoot;
 

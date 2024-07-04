@@ -10,11 +10,9 @@ spring:
     cache: false  # 禁用缓存
     prefix: classpath:/templates/  # 模板文件的前缀路径
     suffix: .html  # 模板文件的后缀
-
 # MyBatis
 mybatis:
   mapper-locations: classpath:userManage.mapper/*.xml  # 映射文件的位置
-
 # Socket
 server:
   port: 8080  # 服务器端口号
